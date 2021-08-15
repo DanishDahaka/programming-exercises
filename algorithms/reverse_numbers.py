@@ -3,7 +3,6 @@ def reverse_divisable(number, divisor) -> bool:
     string_format = str(number)
     
     reversed_number = int(string_format[::-1])
-    print(reversed_number)
     
     if (number - reversed_number) % divisor == 0:
         
