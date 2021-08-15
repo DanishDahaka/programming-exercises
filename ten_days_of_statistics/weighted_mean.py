@@ -10,14 +10,16 @@ def weightedMean(X, W):
     
     weighted_arr = [elem*weight for elem,weight in zip(X,W)]
     
-    print(round((sum(weighted_arr)/sum(W)),1))
+    return sum(weighted_arr)/sum(W)
     
 
 if __name__ == '__main__':
+    
     n = int(input().strip())
 
     vals = list(map(int, input().rstrip().split()))
 
     weights = list(map(int, input().rstrip().split()))
 
-    weightedMean(vals, weights)
+    # round result for exercise to 1 digit
+    print(round(weightedMean(vals, weights),1))
