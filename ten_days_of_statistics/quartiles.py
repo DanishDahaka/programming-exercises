@@ -1,7 +1,5 @@
 from mean_median_mode import median
 
-""""""
-
 def quartile_calculations(arr):
 
     """ Prepare dataset for quartiles through sorting and slicing.
@@ -16,7 +14,6 @@ def quartile_calculations(arr):
     second_half (int): the second part of the ordered dataset from the median value
     median_value (int): the middle value of the ordered dataset
     """
-
 
     # sort ascending inplace
     arr.sort()
@@ -34,7 +31,6 @@ def quartile_calculations(arr):
         # split dataset exactly in half
         first_half, second_half = arr[:middle], arr[middle:]
 
-
     # case odd array length
     else:
         
@@ -46,10 +42,8 @@ def quartile_calculations(arr):
 
     return (median(first_half), median_value, median(second_half))
 
-    """ return statement for HackerRank as integer list instead:"""
+    """return statement for HackerRank as integer list instead:"""
     #return [int(median(first_half)), int(median_value), int(median(second_half))]
-
-
 
 if __name__ == '__main__':
     # example test case
