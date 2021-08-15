@@ -1,16 +1,29 @@
 from collections import Counter
 
-def mean(array, amount):
+def mean(array):
+
+    amount = len(array)
     
     # divide sum of elements through number of elements
     return sum(array)/amount
     
-def median(array, amount):
+def median(array):
+
+    amount = len(array)
     
     s = sorted(array)
+
+    # case even array length
+    if amount % 2 == 0:
+
+         # divide sum of the two middle elements
+        return ((s[(amount//2)-1] + s[amount//2]) / 2)
     
-    # divide sum of the two middle elements
-    return ((s[(amount//2)-1] + s[amount//2]) / 2)
+    # case odd array length 
+    else:
+        # get middle value, paying attention to zero-indexed array
+        return s[amount//2]
+    
 
 def mode(array):
     
@@ -31,4 +44,4 @@ if __name__ == '__main__':
 
     array = list(map(int, input().split()))
     
-    print(mean(array,amount), median(array, amount), mode(array), sep = '\n')
+    print(mean(array), median(array), mode(array), sep = '\n')
