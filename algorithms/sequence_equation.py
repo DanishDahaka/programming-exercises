@@ -16,14 +16,3 @@ def permutation_equation(arr) -> list:
         
     
 print(permutation_equation([5,2,1,3,4]))
-
-
-
-
-    
-
-
-
-
-
-
