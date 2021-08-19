@@ -26,7 +26,7 @@ for i in range(1,6):
 
 print(f'{float(res):.3f}')
 
-### alternative way to avoid loop for task 2 from shabab477, calculate the complement P(X>5) ###
+### alternative way to avoid loop for task 2 adapted from shabab477, calculate the complement P(X>5) ###
 
-print(round(1 - (1 - (1 / 3))**5, 3))
+print(f'{1 - (1 - (1 / 3))**5:.3f}')
 
