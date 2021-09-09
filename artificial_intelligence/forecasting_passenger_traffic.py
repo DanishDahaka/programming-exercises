@@ -36,15 +36,6 @@ if __name__ == '__main__':
                         names=['ds', 'y']
                         )
 
-    """ plotting with plotly
-    print(df.head())
-
-    # some plotting
-    fig = px.line(df, 
-                    x="ds", 
-                    y="y", 
-                    title='Amount of Traffic passengers per month')
-    fig.show()"""
 
     num_months = len(df)
 
