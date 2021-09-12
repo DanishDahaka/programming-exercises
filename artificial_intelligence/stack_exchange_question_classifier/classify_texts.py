@@ -71,9 +71,11 @@ if __name__ == '__main__':
 
     df = pd.DataFrame(data)
 
+    # use both question and excerpt for classification
+    df['concatenated'] = df[['question','excerpt']].agg(' '.join, axis=1)
 
     # convert dataframe strings into list of strings, change if there are other names
-    X, y = df['question'].tolist(), df['topic'].tolist() # alternatively use df['excerpt'] for more text?
+    X, y = df['concatenated'].tolist(), df['topic'].tolist() # alternatively use df['excerpt'] for more text?
 
     # retrieve accuracies from models based on splitting the training data
     accuracies, models, tfidf_vectorizer = compare_three_text_classifiers_tfidf(X,y)
