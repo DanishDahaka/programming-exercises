@@ -13,7 +13,8 @@ basePath = os.path.dirname(os.path.abspath(__file__))
 
 def compare_three_text_classifiers_tfidf(X,y):
 
-    """ Run text classification for MNB, Logistic Regression and XGBoost.
+    """ Run text classification through train-/test split with
+    MNB, Logistic Regression and XGBoost.
 
 
     Args:
@@ -23,7 +24,7 @@ def compare_three_text_classifiers_tfidf(X,y):
     Returns:
     accuracies          (list): accuracy scores for each model
     models              (list): instantiated models
-    tf_idf_vectorizer   (list): tf-idf vectorizer instance
+    tf_idf_vectorizer   (object): tf-idf vectorizer instance
     """
 
     #print(f'this is X {X} \n and here is y: {y}')
@@ -45,10 +46,11 @@ def compare_three_text_classifiers_tfidf(X,y):
 
     models = [mnb, lr, xgb]
 
-    predictions = [model.predict(X_test) for model in [mnb, lr, xgb]]
+    predictions = [model.predict(X_test) for model in models]
 
     accuracies = [accuracy_score(y_test, pred) for pred in predictions]
 
+    # verbose info about the accuracies of models
     for model_name, acc in zip(['Multionmial Naive Bayes','LogReg','XGB'], accuracies):
 
         print('le accuracy from '+model_name+f': {acc}')
