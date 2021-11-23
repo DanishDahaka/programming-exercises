@@ -1,4 +1,5 @@
 from itertools import product
+from fractions import Fraction
 
 ### TASK 1 ###
 """In a single toss of 2 fair (evenly-weighted) six-sided dice, 
@@ -26,3 +27,12 @@ different_results_six_sum = [i for i in different_dice_results if i[0]!=i[1] and
 
 # solution as percentage, 0.111 == 1/9
 print(len(different_results_six_sum)/len(different_dice_results))
+
+## additional content ###
+# rolling at least two sixes when rolling one die three times
+
+three_times = list(product(range(1,7), repeat = 3))
+
+results = [result for result in three_times if (result[0]==3 and result[1]==3) or (result[0]==3 and result[2] == 3) or (result[1]==3 and result[2]==3)]
+
+print(Fraction(len(results)/len(three_times)).limit_denominator())
